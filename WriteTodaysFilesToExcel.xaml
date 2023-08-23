@@ -6,7 +6,7 @@
     <x:Property Name="out_dataTable" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1022,2068</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1037,2160</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -63,6 +63,7 @@
       <x:String>System.Drawing</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Excel.Enums</x:String>
       <x:String>UiPath.GSuite.Activities.Sheets.Enums</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -141,7 +142,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="WriteTodaysFilesToExcel" sap:VirtualizedContainerService.HintSize="496,2003" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="WriteTodaysFilesToExcel" sap:VirtualizedContainerService.HintSize="496,2095" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="listOfTodaysFilesToWrite" />
       <Variable x:TypeArguments="x:String" Name="excelToLogTodaysFilesPath">
@@ -258,7 +259,7 @@
             <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="AddDataRow_6">
               <ui:AddDataRow.ArrayRow>
                 <InArgument x:TypeArguments="s:Object[]">
-                  <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_167">new object[] {currentItem}</CSharpValue>
+                  <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_183">new object[] {currentItem,false}</CSharpValue>
                 </InArgument>
               </ui:AddDataRow.ArrayRow>
               <ui:AddDataRow.DataTable>
@@ -374,5 +375,37 @@
         </InArgument>
       </Assign.Value>
     </Assign>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="WriteLine_9">
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_184" xml:space="preserve">"Current row info is: " + CurrentRow["Todays file path"] +  CurrentRow["Has converting successed"]</CSharpValue>
+              </InArgument>
+            </WriteLine>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <ui:ForEachRow.DataTable>
+        <InArgument x:TypeArguments="sd:DataTable">
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_181">dataTable</CSharpValue>
+        </InArgument>
+      </ui:ForEachRow.DataTable>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
   </Sequence>
 </Activity>

@@ -4,7 +4,7 @@
     <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>832,2675</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1161,2872</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,7 +114,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AccessOnlineConverter" sap:VirtualizedContainerService.HintSize="546,2610" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AccessOnlineConverter" sap:VirtualizedContainerService.HintSize="546,2807" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="nameOfTheFile" />
     </Sequence.Variables>
@@ -125,7 +125,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,90" sap2010:WorkflowViewState.IdRef="WriteLine_2">
       <InArgument x:TypeArguments="x:String">
-        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">$"{in_TransactionItem.SpecificContent["Todays file path"].ToString()}"</CSharpValue>
+        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">"Inside access converter " + in_TransactionItem.SpecificContent["Todays file path"].ToString()</CSharpValue>
       </InArgument>
     </WriteLine>
     <Assign sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_1">
@@ -140,13 +140,13 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Firefox: Google" sap:VirtualizedContainerService.HintSize="484,2247" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="5e9b8bb4-47ec-4320-9131-9a9998dfef88" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Firefox: Google" sap:VirtualizedContainerService.HintSize="484,2444" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="5e9b8bb4-47ec-4320-9131-9a9998dfef88" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2030" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2227" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -221,6 +221,17 @@
               </uix:NClick.Target>
             </uix:NClick>
             <Delay Duration="00:00:20" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5e9b8bb4-47ec-4320-9131-9a9998dfef88" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1882, 8, 46, 43" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Close'" FullSelectorArgument="&lt;uia automationid='TabsToolbar' name='Browser tabs' role='tool bar' /&gt;&lt;uia name='Close' role='button' /&gt;" FuzzySelectorArgument="&lt;uia automationid='TabsToolbar' name='Browser tabs' role='tool bar' /&gt;&lt;uia name='Close' role='button' automationid='' check:fulltext='Close' /&gt;" Guid="07189c88-f712-4074-8b57-20f0ac6db8ec" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAAvCAYAAAChd5n0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACjSURBVGhD7c/RBgMxEIXhuV1l6Xtt3/9xUofSlFgpM3HCP/w3kYvzBed2bfP7MCKO49F2DYhbQNwC4hYQt4C4BcQtIG4Bmem6XsP3vpk/M5VC1N3QLIQqh6jR4EyEWgJR/fBshFoGUQJUIBSQf+sBFZglkNHwbEw55G5wJqYUMjM0C1MKWRkQt4C4BcQtIG4BcQuIW0DcAuLWD+Q8n23XvpCIN0xDd+eS6+oqAAAAAElFTkSuQmCC" InformativeScreenshot="e03d783d47ba29f1093882beb8ea216a.png" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='MozillaWindowClass' title='Mozilla Firefox' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1836, 8, 46, 43" ElementType="Button" FriendlyName="'Restore Down'" FullSelectorArgument="&lt;uia automationid='TabsToolbar' name='Browser tabs' role='tool bar' /&gt;&lt;uia name='Restore Down' role='button' /&gt;" FuzzySelectorArgument="&lt;uia automationid='TabsToolbar' name='Browser tabs' role='tool bar' /&gt;&lt;uia name='Restore Down' role='button' automationid='' check:fulltext='Restore Down' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAAvCAYAAAChd5n0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACPSURBVGhD7dFBCoAgEEZhtxEI3q3ufxSjhRAxWWBDv/YGvo06i1eBUZs8yIRpmvMICFFDiBpC1BCihhA1hKghRA0hd5ZlrbJ2WriGWOe7LkKOX91S3pz3WrmEWOc7Qh4g5MpvQgrrvsUnf8SDS0iNtfOG10O+QogaQtQQooYQNYSoIUQNIWoIURNiTLl/KW994Hrvan71IAAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

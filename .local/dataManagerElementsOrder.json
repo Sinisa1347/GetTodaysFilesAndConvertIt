@@ -1,0 +1,196 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "SystemException&StateMachine_1",
+        "TransactionItem&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "dt_TransactionData&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "excelFullPath&StateMachine_1",
+        "folderPath&StateMachine_1",
+        "ShouldStop&State_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "todaysFilesList&Sequence_2",
+        "folderPath&Sequence_2",
+        "excelFullPath&Sequence_2",
+        "dataTable&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_dataTable",
+        "out_FolderPath",
+        "out_ExcelFullPath",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_2",
+        "dt_Assets&Sequence_4",
+        "AssetValue&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_Config",
+        "in_ConfigFile",
+        "in_ConfigSheets"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/KillAllProcesses.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "GetListOfTodaysFiles.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "folderPath&Sequence_1",
+        "todaysFiles&Sequence_1",
+        "allFiles&Sequence_1",
+        "doesFolderExist&Sequence_1",
+        "fileInfo&Sequence_17"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_todaysFilesList",
+        "out_folderPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "WriteTodaysFilesToExcel.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "listOfTodaysFilesToWrite&Sequence_1",
+        "excelToLogTodaysFilesPath&Sequence_1",
+        "folderToCreateExcel&Sequence_1",
+        "excelFullPath&Sequence_1",
+        "dataTable&Sequence_1",
+        "tableHeaders&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_dataTable",
+        "in_folderPath",
+        "in_todaysFilesList",
+        "out_ExcelFullPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "queueName&Sequence_3",
+        "queueItems&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "in_Config",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID",
+        "io_dt_TransactionData",
+        "in_ExcelFullPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "transactionItem&Sequence_2",
+        "folderPath&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config",
+        "in_folderPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AccessOnlineConverter.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "nameOfTheFile&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_folderPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/SetTransactionStatus.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "QueueRetry&Sequence_8",
+        "ScreenshotPath&Sequence_8"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ExcelFullPath",
+        "in_BusinessException",
+        "io_RetryNumber",
+        "io_TransactionNumber",
+        "in_TransactionField1",
+        "in_TransactionField2",
+        "in_TransactionID",
+        "in_SystemException",
+        "io_ConsecutiveSystemExceptions",
+        "in_Config",
+        "in_TransactionItem"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
